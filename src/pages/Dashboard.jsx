@@ -6,6 +6,7 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const salesData = useSelector((state) => state.sales);
   const inventoryData = useSelector((state) => state.inventory);
+  console.log(salesData);
 
   useEffect(() => {
     dispatch(fetchInventory());
@@ -13,7 +14,7 @@ const Dashboard = () => {
   }, [dispatch]);
 
   const totalSales = salesData.reduce(
-    (totalSales, currentSale) => totalSales + currentSale,
+    (totalSales, currentSale) => totalSales + currentSale.amount,
     0
   );
 
@@ -27,14 +28,14 @@ const Dashboard = () => {
         <div className='row m-5'>
           <div className='col-md m-1'>
             <div className='card'>
-              <div className='card-body'>
-                <h5>Total Sales : {totalSales}</h5>
+              <div className='card-body text-center'>
+                <h5>Total Sales : $ {totalSales}</h5>
               </div>
             </div>
           </div>
           <div className='col-md m-1'>
             <div className='card'>
-              <div className='card-body'>
+              <div className='card-body text-center'>
                 <h5>Total Inventory : {totalInventory} </h5>
               </div>
             </div>
