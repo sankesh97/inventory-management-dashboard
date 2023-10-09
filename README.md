@@ -1,1 +1,1 @@
-# inventory-management-dashboard
+# Inventory Management App
