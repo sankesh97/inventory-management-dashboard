@@ -29,7 +29,7 @@ export const addInventory = (inventoryData) => async (dispatch) => {
 export const fetchInventory = () => async (dispatch) => {
   try {
     const { data } = await axios.get(
-      'https://inventory-management-api.sankeshjain.repl.co/api/items'
+      'https://inventory-management-api.sankeshjain.repl.co:3000/api/items'
     );
     dispatch({ type: 'ADD_INVENTORY_SUCCESS', payload: data });
   } catch (error) {
@@ -41,7 +41,7 @@ export const fetchInventory = () => async (dispatch) => {
 export const fetchSales = () => async (dispatch) => {
   try {
     const { data } = await axios.get(
-      'https://inventory-management-api.sankeshjain.repl.co/api/sales'
+      'https://inventory-management-api.sankeshjain.repl.co:3000/api/sales'
     );
     dispatch({ type: 'ADD_SALES_SUCCESS', payload: data });
   } catch (error) {
